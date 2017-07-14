@@ -9,7 +9,7 @@ Tools include:
   A holiday request system and workflow. 
   Vital information directory. 
 
-Tool implemented so far:
+Tool implemented so far:\n
   Room booking system, 10% complete. 
 
   
