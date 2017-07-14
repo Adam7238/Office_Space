@@ -1,6 +1,6 @@
 # Office_Space
 
-A Java REST API Engine to deliver a light weight, scalable solution for office administration. 
+A Java REST API Engine to deliver a lightweight, scalable solution for office administration. 
 
 ## Tools include:
 * A room booking system. 
