@@ -1,0 +1,10 @@
+{
+  "room":{
+    "name": "Conference Room",
+    "location": "1st Floor, Room 5",
+    "admin": "dave@company.com",
+    "open": "9:00",
+    "close": "17:00",
+    "id":"room-123abc123"
+  }
+}

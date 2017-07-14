@@ -1,0 +1,26 @@
+NOTES:
+    system is currently searching for rooms based on their string name, update to use roomID - UID - 14/07/2017
+
+Get Particular Rooms Bookings:
+    POST:
+        method = get
+        dataType = roombooking
+        room = "room name"
+    RETURNS:
+        All bookings of room found in Json Array Format
+            "bookings": [{}]
+    FAILS:
+        "Failed to find a room with name 'room name'."
+
+Add Booking To Particular Room:
+    POST:
+        method = add
+        dataType = roombooking
+        room = "room name"
+        date = DD/MM/YYYY
+        start = HH:MM
+        duration = HH:MM
+        user = user@email.com
+        reason = some generic reason for booking the room.
+    RETURNS:
+        True if the booking does not overlap with another, is within the opening and closing times of said room

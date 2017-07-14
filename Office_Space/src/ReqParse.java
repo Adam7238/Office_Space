@@ -16,7 +16,7 @@ public class ReqParse {
 
     public Request parse(){
 
-        String pattern = "\\+\\&";
+        String pattern = "\\&";
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(request);
 
@@ -37,22 +37,32 @@ public class ReqParse {
         }
 
         // Every even number in array index is key value, inc 0.
-        System.out.println(splitReg[3]);
+        System.out.println(request);
         // Using the key values decide what kind of request has been sent.
         // E.G. if content and asset, are key values the client wants to update said
         // asset with given content.
 
         Request request1 = null;
-        switch(splitReg[0]){
-            case("room"):{
-                request1 = new Room();
-                break;
+        switch(splitReg[1]){// method
+            case("get"):{
+                switch(splitReg[3]){ // dataType
+                    case("roombooking"):{
+                        System.out.println("get.");
+                        request1 = new Room(1,1, splitReg);
+                        break;
+                    }
+
+                }
+            }
+            case("add"):{
+                switch(splitReg[3]){
+                    case("roombooking"):{
+                        System.out.println("add.");
+                        request1 = new Room(2,2,splitReg); // Need to double check parameters.
+                    }
+                }
             }
         }
-//        if (request1 != null) {
-//            request1.addData(splitReg[1]);
-//        }
-
 
         return request1;
     }

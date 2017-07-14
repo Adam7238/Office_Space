@@ -21,7 +21,7 @@ public class HttpConnection {
 
     public static void main(String[] args) throws Exception{
         System.out.println("Starting");
-        HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
+        HttpServer server = HttpServer.create(new InetSocketAddress(3000), 0);
         server.createContext("/test", new MyHandler());
         server.start();
     }
@@ -32,22 +32,26 @@ public class HttpConnection {
             System.out.println("Connection received!");
             System.out.println(httpExchange.getRemoteAddress());
             System.out.println("-----------------------------");
-            String response = "Server Response...";
+
 
 
             OutputStream os = httpExchange.getResponseBody();
             InputStream is = httpExchange.getRequestBody();
 
+
+            // Now string has been received delegate message to appropriate class.
+            // Parse the request.
+
+            ReqParse reqParse = new ReqParse(convertStreamToString(is));
+            Request newReg = reqParse.parse();
+
+            String response = newReg.run();
+
+
             httpExchange.sendResponseHeaders(200, response.getBytes().length);
 
             os.write(response.getBytes("UTF-8"));
             os.close();
-
-
-            // Now string has been received delegate message to appropriate class.
-            // Parse the request.
-            ReqParse reqParse = new ReqParse(convertStreamToString(is));
-            Request newReg = reqParse.parse();
 
 
 

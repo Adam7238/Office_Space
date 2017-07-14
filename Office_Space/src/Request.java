@@ -4,9 +4,6 @@
 public abstract class Request {
     // A root class for request type object.
 
-    public abstract String getData(String query);
-    public abstract boolean addData(String content);
-    public abstract boolean run();
-
+    public abstract String run();
 
 }

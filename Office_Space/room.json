@@ -1,0 +1,45 @@
+{
+  "rooms":[{
+    "name": "Conference Room",
+    "location": "1st Floor, Room 5",
+    "admin": "dave@company.com",
+    "open": "9:00",
+    "close": "17:00",
+    "interior":"1 large table with 10 chairs, a projector and a conference telephone.",
+    "id":"222222",
+    "bookings":[{
+      "date":"13/07/2017",
+      "start":"11:00",
+      "duration":"1:00",
+      "user":"david@company.co.uk",
+      "reason":"Bimonthly meeting"
+    },{
+      "date":"13/07/2017",
+      "start":"17:00",
+      "duration":"2:00",
+      "user":"amy@company.co.uk",
+      "reason":"interviewing candidates"
+    }]
+  },{
+    "name": "Meeting / Video Call Room",
+    "location": "2nd Floor, Room 10/A",
+    "admin": "dave@company.com",
+    "open": "8:00",
+    "close": "20:00",
+    "interior":"2 medium tables each with 3 chairs, a flat screen and surround sound.",
+    "id":"111111",
+    "bookings":[{
+      "date":"13/07/2017",
+      "start":"11:00",
+      "duration":"1:00",
+      "user":"david@company.co.uk",
+      "reason":"Bimonthly meeting"
+    },{
+      "date":"13/07/2017",
+      "start":"17:00",
+      "duration":"2:00",
+      "user":"amy@company.co.uk",
+      "reason":"interviewing candidates"
+    }]
+  }]
+}
