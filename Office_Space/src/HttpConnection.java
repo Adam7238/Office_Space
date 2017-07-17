@@ -47,16 +47,10 @@ public class HttpConnection {
 
             String response = newReg.run();
 
-
             httpExchange.sendResponseHeaders(200, response.getBytes().length);
 
             os.write(response.getBytes("UTF-8"));
             os.close();
-
-
-
-
-
 
         }
     }
